@@ -1,0 +1,21 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+*.env
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.sock
+
+# System files
+.DS_Store
+Thumbs.db

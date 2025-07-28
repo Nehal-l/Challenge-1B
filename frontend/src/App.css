@@ -1,0 +1,220 @@
+/* Base Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #1b1b2f, #3a0ca3, #5f0f40, #6a0572, #240046);
+  background-size: 600% 600%;
+  animation: nebulaShift 20s ease infinite;
+  color: #f5f5ff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Nebula Gradient Animation */
+@keyframes nebulaShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Subtle Floating Motion */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* App Container */
+.app {
+  padding: 3rem 1rem;
+  text-align: center;
+  animation: fadeIn 1.2s ease, floatUp 8s ease-in-out infinite;
+  backdrop-filter: blur(3px);
+}
+
+/* Entrance Fade Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading Glow Flow */
+.app h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(90deg, #ffb6ff, #bdb2ff, #a0c4ff, #bdb2ff, #ffb6ff);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: headingFlow 8s linear infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+@keyframes headingFlow {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+/* Frosted Cards with Aurora Border Animation */
+.upload-box, .form-box {
+  margin: 1.5rem auto;
+  max-width: 640px;
+  padding: 2.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  animation: floatUp 6s ease-in-out infinite;
+}
+
+/* Aurora Glow Border Animation */
+.upload-box::before, .form-box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(270deg, #ffb6ff, #a18cd1, #9d4edd, #5f0f40);
+  background-size: 600% 600%;
+  z-index: 0;
+  border-radius: 20px;
+  filter: blur(12px);
+  opacity: 0.1;
+  animation: auroraBorder 10s linear infinite;
+}
+
+@keyframes auroraBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.upload-box > *, .form-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.upload-box:hover, .form-box:hover {
+  transform: scale(1.025);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Input Fields */
+input, textarea {
+  width: 85%;
+  padding: 14px 16px;
+  margin: 1rem auto;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #ddd;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* Analyze Button */
+button {
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #6a0572, #9d4edd);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 24px rgba(157, 78, 221, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  animation: pulseButton 2.5s infinite;
+}
+
+@keyframes pulseButton {
+  0%, 100% { box-shadow: 0 8px 24px rgba(157, 78, 221, 0.4); }
+  50% { box-shadow: 0 12px 32px rgba(157, 78, 221, 0.6); }
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(to right, #9d4edd, #6a0572);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error {
+  color: #ff6b6b;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-top: 12px;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* JSON Output Area */
+.json-output {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.json-container {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0ff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border-left: 6px solid #9d4edd;
+  transition: all 0.3s ease;
+  text-align: left;
+  overflow-x: auto;
+  margin-top: 25px;
+  animation: floatUp 10s ease-in-out infinite;
+}
+
+.json-container:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.01);
+}
+
+/* Scrollbar Styling */
+.json-container::-webkit-scrollbar {
+  height: 8px;
+}
+.json-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}

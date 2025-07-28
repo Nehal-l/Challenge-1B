@@ -1,0 +1,13 @@
+The TinyLLaMA-1.1B-Chat-v1.0 is a lightweight, instruction-tuned large language model designed for efficient offline inference on CPUs. With a size of approximately 680MB in Q4_K_M quantized GGUF format, it provides a strong balance between performance and resource usage — making it ideal for local applications such as document analysis, summarization, and chat-based interfaces.
+
+Model Size: ~680MB (Q4_K_M quantized)
+
+Architecture: 1.1 billion parameters (TinyLLaMA)
+
+Format: GGUF, optimized for llama-cpp-python
+
+Capabilities: Chat, summarization, Q&A, text generation
+
+Use Case: Perfect for CPU-based, privacy-focused local AI tasks
+
+This model allows developers to build AI-powered applications without requiring a GPU or cloud inference, making it suitable for personal, enterprise, and edge deployments.
